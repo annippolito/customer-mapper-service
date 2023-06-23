@@ -1,0 +1,11 @@
+.mtj.tmp/
+hs_err_pid*
+target/
+out/
+.idea/
+.idea_modules/
+*.iml
+*.ipr
+*.iws
+.DS_Store
+.mvn/
