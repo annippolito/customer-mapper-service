@@ -1,4 +1,4 @@
-package com.exercise3.customermapperservice.customers;
+package com.customermapperservice.customers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
@@ -16,8 +16,8 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 
-import static com.exercise3.customermapperservice.customers.Stubs.aValidRequest;
-import static com.exercise3.customermapperservice.customers.Stubs.aValidRequestWithCustomerId2;
+import static com.customermapperservice.customers.Stubs.aValidRequest;
+import static com.customermapperservice.customers.Stubs.aValidRequestWithCustomerId2;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;

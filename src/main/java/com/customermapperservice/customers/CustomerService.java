@@ -1,6 +1,6 @@
-package com.exercise3.customermapperservice.customers;
+package com.customermapperservice.customers;
 
-import com.exercise3.customermapperservice.customers.model.Customer;
+import com.customermapperservice.customers.model.Customer;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

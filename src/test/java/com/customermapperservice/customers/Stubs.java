@@ -1,7 +1,7 @@
-package com.exercise3.customermapperservice.customers;
+package com.customermapperservice.customers;
 
-import com.exercise3.customermapperservice.customers.model.Customer;
-import com.exercise3.customermapperservice.customers.model.CustomerRequest;
+import com.customermapperservice.customers.model.Customer;
+import com.customermapperservice.customers.model.CustomerRequest;
 import lombok.experimental.UtilityClass;
 
 import java.time.LocalDate;

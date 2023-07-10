@@ -1,6 +1,6 @@
-package com.exercise3.customermapperservice.customers;
+package com.customermapperservice.customers;
 
-import com.exercise3.customermapperservice.customers.model.Customer;
+import com.customermapperservice.customers.model.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

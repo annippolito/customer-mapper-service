@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>com.exercise3</groupId>
+	<groupId>io.github.annippolito</groupId>
 	<artifactId>customer-mapper-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>customer-mapper-service</name>
@@ -18,7 +18,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<javax.el.version>3.0.0</javax.el.version>
-		<lombok.version>1.18.22</lombok.version>
+		<lombok.version>1.18.26</lombok.version>
 		<swagger.version>3.0.0</swagger.version>
 	</properties>
 
@@ -54,13 +54,19 @@
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>1.6.6</version>
+			<version>1.6.15</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>io.github.annippolito</groupId>
+			<artifactId>log-stats</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 
 	</dependencies>
@@ -70,6 +76,42 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>aspectj-maven-plugin</artifactId>
+				<version>1.14.0</version>
+				<executions>
+					<execution>
+						<id>default-compile</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+						<configuration>
+							<weaveDirectories>
+								<weaveDirectory>${project.build.directory}/classes</weaveDirectory>
+							</weaveDirectories>
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+					<complianceLevel>8</complianceLevel>
+					<source>8</source>
+					<target>8</target>
+					<Xlint>ignore</Xlint>
+					<encoding>UTF-8</encoding>
+					<excludes>
+						<exclude>**/*.java</exclude>
+					</excludes>
+					<forceAjcCompile>true</forceAjcCompile>
+					<aspectLibraries>
+						<aspectLibrary>
+							<groupId>io.github.annippolito</groupId>
+							<artifactId>log-stats</artifactId>
+						</aspectLibrary>
+					</aspectLibraries>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

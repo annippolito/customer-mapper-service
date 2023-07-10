@@ -1,12 +1,13 @@
-package com.exercise3.customermapperservice.customers;
+package com.customermapperservice.customers;
 
-import com.exercise3.customermapperservice.customers.model.Customer;
-import com.exercise3.customermapperservice.customers.model.CustomerRequest;
+import com.customermapperservice.customers.model.Customer;
+import com.customermapperservice.customers.model.CustomerRequest;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import logstats.annotation.LogStats;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,6 +32,7 @@ public class CustomerController {
             @ApiResponse(responseCode = "200", description = "Customer found and externalId returned", content = { @Content(mediaType = "application/json", schema = @Schema(implementation = String.class)) }),
             @ApiResponse(responseCode = "404", description = "Customer not found for given customerId", content = @Content) })
     @GetMapping("/{customerId}")
+    @LogStats
     public ResponseEntity<String> getExternalId(@PathVariable int customerId) {
         logger.info("getExternalId with customerId={}", customerId);
         Optional<Customer> customer = customerService.findByCustomerId(customerId);
@@ -44,6 +46,7 @@ public class CustomerController {
             @ApiResponse(responseCode = "200", description = "Customer saved or updated"),
             @ApiResponse(responseCode = "400", description = "Invalid request (customerId should be a positive int and creation date should not be in the future")})
     @PostMapping()
+    @LogStats
     public ResponseEntity<Void> saveCustomer(@Valid @RequestBody CustomerRequest customerRequest){
         logger.info("save customer with customerRequest={}", customerRequest);
         try {

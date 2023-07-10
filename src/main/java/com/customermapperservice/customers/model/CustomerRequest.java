@@ -1,4 +1,4 @@
-package com.exercise3.customermapperservice.customers.model;
+package com.customermapperservice.customers.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;

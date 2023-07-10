@@ -1,4 +1,4 @@
-package com.exercise3.customermapperservice.customers;
+package com.customermapperservice.customers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
@@ -14,7 +14,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.util.Optional;
 
-import static com.exercise3.customermapperservice.customers.Stubs.*;
+import static com.customermapperservice.customers.Stubs.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.times;

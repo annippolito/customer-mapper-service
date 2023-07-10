@@ -1,4 +1,4 @@
-package com.exercise3.customermapperservice;
+package com.customermapperservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
